@@ -1,0 +1,22 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Zharif Aziz Zulkarnain Widodo <zharifazizzulkarnain@gmail.com>",
+  "license": "MIT",
+  "description": "A frontend package for Erupsi project",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "install": "^0.13.0",
+    "npm": "^11.5.1"
+  }
+}
