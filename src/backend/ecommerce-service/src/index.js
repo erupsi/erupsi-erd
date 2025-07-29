@@ -1,4 +1,6 @@
 const express = require("express");
+const cors = require("cors");
+
 const app = express();
 const productsRouter = require("./routes/products");
 const consumersRouter = require("./routes/consumers");
@@ -6,7 +8,7 @@ const statisticRouter = require("./routes/statistic");
 
 // Middleware
 app.use(express.json());
-
+app.use(cors());
 // Routes
 // app.use("/", (req, res) => {
 //     res.send("Welcome to the E-commerce Service API");

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/erupsi/erupsi-erp#readme",
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "install": "^0.13.0",
     "npm": "^11.5.1",
