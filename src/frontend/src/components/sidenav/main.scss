@@ -11,7 +11,8 @@ nav{
     display: flex;
     flex-direction: column;
 
-    .nav_top{
+    // Top section (icon / logo)
+    &>div:nth-child(1){
         margin-bottom: 32px;
 
         div{
@@ -20,11 +21,6 @@ nav{
             gap: '12px'; 
             margin-bottom: '8px' 
         }
-
-        // img{
-        //     width: 40px;
-        //     height: 40px; 
-        // }
 
         h1{
             font-family: 'Space Grotesk', sans-serif; 
@@ -44,36 +40,187 @@ nav{
             margin: 0; 
         }
     }
-    // h1{
-    //     font-family: 'Space Grotesk', sans-serif;
-    //     font-size: 26px;
-    //     font-weight: 500;
-    //     line-height: 1;
-    // }
-    // h2{
-    //     font-family: 'Inter', sans-serif;
-    //     color: #9EA0A8;
-    //     font-size: 14px;
-    //     font-weight: 400;
-    //     line-height: 0.8;
-    // }
+    
+    // Middle section (Menu Items)
+    &>div:nth-child(2){
+        flex: 1; 
+        overflow-y: auto; 
+        padding-left: 8px; 
+        margin-left: -8px; 
+        direction: rtl; 
+
+        &>div:nth-child(1){
+            display: flex; 
+            flex-direction: column;
+            gap: 8px;
+            direction: ltr;
+
+            .menu_item{
+                display: flex; 
+                align-items: center; 
+                justify-content: space-between;
+                padding: 12px 16px; 
+                border-radius: 8px; 
+                cursor: pointer; 
+                transition: all 0.2s ease; 
+
+                &>div:nth-child(1){
+                    display: flex; 
+                    align-items: center; 
+                    gap: 12px; 
+
+                    span{fontWeight: 500}
+                }
+
+                &>div:nth-child(2){
+                    display: flex; 
+                    align-items: center; 
+                    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                }
+            }
+
+            .sub_menu_item{
+                margin-left: 24px; 
+                margin-top: 8px;
+                overflow: clip; 
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);  
+
+                &>div{
+                    display:flex;
+                    flex-direction:column;
+                    gap:4px;
+
+                    &>div{
+                        display: flex; 
+                        align-items: center; 
+                        justify-content: space-between;
+                        padding: 10px 16px; 
+                        border-radius: 8px;
+                        cursor: pointer;
+                        transition: all 0.2s ease; 
+
+                        &>div{
+                            display:flex;
+                            align-items: center;
+                            gap: 12px; 
+
+                            &>div{
+                                width: 8px;
+                                height: 8px; 
+                                border-radius:50%;
+                                opacity: 0.5;
+                            }
+
+                            &>span{
+                                font-size: 14px;
+                            }
+                        }
+
+                        &>span{
+                            padding: 4px 8px;
+                            font-size: 12px;
+                            font-weight: 600; 
+                            color: white;
+                            border-radius: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Bottom Section (Inbox)
+    &>div:nth-child(3){
+        border-top: 1px solid #e5e7eb;
+        padding-top: 16px;
+        margin-top: 16px;
+
+        .inbox-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 16px;
+            margin-bottom: 12px;
+
+            .inbox-title {
+            color: #9ca3af;
+            font-size: 14px;
+            font-weight: 500;
+            }
+
+            .inbox-badge {
+            background-color: #ef4444;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 20px;
+            }
+        }
+
+        .inbox-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            .inbox-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: #f3f4f6;
+            }
+
+            .inbox-icon {
+                width: 16px;
+                height: 16px;
+                border-radius: 2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                span {
+                color: white;
+                font-size: 10px;
+                font-weight: bold;
+                }
+
+                &.inbox-icon-blue {
+                background-color: #3b82f6;
+                }
+
+                &.inbox-icon-gray {
+                background-color: #374151;
+                }
+
+                &.inbox-icon-green {
+                background-color: #10b981;
+                border-radius: 50%;
+                }
+
+                &.inbox-icon-red-round {
+                background-color: #ef4444;
+                border-radius: 50%;
+                }
+            }
+
+            .inbox-item-title {
+                font-size: 14px;
+                font-weight: 500;
+                color: #374151;
+            }
+
+            .inbox-item-desc {
+                font-size: 12px;
+                color: #9ca3af;
+            }
+            }
+        }
+    }
+
 }
-
-//  /* Custom scrollbar styling */
-// nav div[style*="overflow-y: auto"]::-webkit-scrollbar {
-// width: 6px;
-// }
-
-// nav div[style*="overflow-y: auto"]::-webkit-scrollbar-track {
-// background: transparent;
-// }
-
-// nav div[style*="overflow-y: auto"]::-webkit-scrollbar-thumb {
-// background: #d1d5db;
-// border-radius: 3px;
-// }
-
-// nav div[style*="overflow-y: auto"]::-webkit-scrollbar-thumb:hover {
-// background: #9ca3af;
-// }
-

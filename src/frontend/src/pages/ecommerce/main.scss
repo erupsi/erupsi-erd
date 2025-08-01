@@ -1,0 +1,70 @@
+// F4F5F6
+
+.main_content{
+    background-color: #F4F5F6;
+    height: 100%;
+    padding: 4em 3em 10px;
+    overflow-y: scroll;
+
+    .emarket_content{
+        // background-color: red;
+        display: flex;
+        padding: 1em;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+
+        &>a{
+            width: 9rem;
+            height: 17rem;
+            overflow: clip;            
+            border: none;
+            img{
+                width: inherit;
+                height: 9rem;
+                border-radius: 5px;
+            }
+
+            .information{
+                width: inherit;
+                &>div:nth-child(1){
+                    // position: absolute;
+                    width: inherit;
+                    h2{
+                        font-size: 12px;
+                        font-weight: 400;
+                        line-height: 10px;
+                        letter-spacing: .1px;
+                        white-space: normal; // penting untuk multi-line
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;  // jumlah baris maksimal
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+
+                p{
+                    position:relative;
+                    width: inherit;
+                    color: #000000;
+                    font-weight: 900;
+                }
+
+                .review{
+                    display: flex;
+                    gap: 2px;
+
+                    p{
+                        color: #34343b;
+                        font-size: 12px;
+                        font-weight: 400;
+                        letter-spacing: .1px;
+                        // line-height: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+

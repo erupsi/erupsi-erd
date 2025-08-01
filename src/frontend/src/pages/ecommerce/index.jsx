@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import "./main.scss";
+
 import EMarket from './components/eMarket';
-// import EMarket from "./components/eMarket.jsx"; 
 
 function Ecommerce(){
 
     return(
-        <div>
+        <div className='main_content'>
             <EMarket />
         </div>
     )
