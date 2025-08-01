@@ -6,7 +6,16 @@ const pool = require("../db");
 router.get("/", async (req, res) => {
     try {
         const result = await pool.query(
-            "SELECT * FROM products ORDER BY created_at DESC",
+            `
+            SELECT 
+                products.*, 
+                COALESCE(ROUND(AVG(rating), 1), 0) AS avgRating, 
+                COALESCE(COUNT(DISTINCT id_order_items), 0) AS hasSold 
+            FROM products
+            LEFT JOIN review ON review.id_product = products.id_products
+            LEFT JOIN order_items ON order_items.id_products = products.id_products
+            GROUP BY products.id_products ORDER BY products.created_at DESC
+            `,
         );
         res.json(result.rows);
     } catch (err) {

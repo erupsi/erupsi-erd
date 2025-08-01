@@ -5,7 +5,7 @@ const pool = new Pool({
     host: "localhost",
     database: "ecomdb",
     password: "ecompass",
-    port: 5436,
+    port: 5432,
 });
 
 module.exports = pool;
